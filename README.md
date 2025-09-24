@@ -2,7 +2,7 @@
 
 In terminal/Command prompt, install python then extract the ZIP file into a folder
 
-Navigate to the new folder in your terminal and run the following:
+In your terminal, navigate to the new folder and run the following:
 
 ```python
 
