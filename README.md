@@ -4,7 +4,7 @@ In terminal/Command prompt, install python then extract the ZIP file into a fold
 
 In your terminal, navigate to the new folder and run the following:
 
-### To create a pipeline and copy a text file into onto another:
+## To create a pipeline and copy a text file into onto another:
 
 ```python
 
