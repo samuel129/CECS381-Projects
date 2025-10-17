@@ -1,7 +1,7 @@
 """
 FileCopy.py
 CECS 326 - Operating Systems
-Group Project  - Darren Ammara & Samuel Kim
+Group Project  - Darren Ammara(029035043) & Samuel Kim(027845491)
 
 This program opens a file and writes its contents to a pipe,
 demonstrating interprocess communication between parent and child processes.
@@ -11,8 +11,8 @@ import os
 import sys
 import errno
 
-# Buffer size for reading/writing operations
-BUFFER_SIZE = 25
+# Buffer size for reading/writing operations (default mac os pipe size)
+BUFFER_SIZE = 16384
 
 def print_usage():
     """Print usage information for the program."""
@@ -48,7 +48,7 @@ def validate_arguments(argv):
     
     return source_file, dest_file
 
-def handle_parent_process(source_file, pipe_write_fd, child_pid):
+def handle_parent_process(source_file, dest_file, pipe_write_fd, child_pid):
     """
     Handle the parent process logic: read from source file and write to pipe.
     
@@ -163,7 +163,7 @@ def copy_file_with_pipe(source_file, dest_file):
             os.close(pipe_read_fd)
             
             # Execute parent process logic
-            handle_parent_process(source_file, pipe_write_fd, child_pid)
+            handle_parent_process(source_file, dest_file, pipe_write_fd, child_pid)
             
         else:
             # Fork failed
